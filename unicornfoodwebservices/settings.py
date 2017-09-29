@@ -39,13 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'menu',
+    'order',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders'
 ]
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -87,7 +90,7 @@ REST_FRAMEWORK = {
     ),
 }
 
-
+CORS_ORIGIN_ALLOW_ALL = True
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 

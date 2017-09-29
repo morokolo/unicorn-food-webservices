@@ -2,6 +2,8 @@ from __future__ import unicode_literals
 
 from django.contrib.auth.models import User
 from django.db import models
+from menu.models import *
+
 
 # Create your models here.
 
@@ -9,6 +11,7 @@ class Restaurant(models.Model):
     name = models.CharField(max_length=200, blank=False, null=False)
     address = models.CharField(max_length=200, blank=False, null=False)
     latlong = models.CharField(max_length=30, blank=False, null=False)
+    menu = models.ForeignKey(Menu, related_name='restaurant_menu')
 
     def __str__(self):
         return self.name
