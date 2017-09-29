@@ -1,0 +1,21 @@
+version: "2"
+services:
+  db:
+    restart: on-failure:10
+    image: postgres:9.5.6
+    env_file: config.env
+    volumes:
+      - "postgres-db-volume-ms:/var/lib/postgresql/data"
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    env_file: config.env
+    volumes:
+      - .:/code
+    ports:
+      - "7071:8000"
+    links:
+      - db
+
+volumes:
+  postgres-db-volume-ms:

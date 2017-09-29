@@ -1,0 +1,18 @@
+django==1.9
+Pillow
+workdays
+python-dateutil
+djangorestframework==3.3.3
+django-rest-swagger
+django-cors-headers
+django-filter
+
+## testing:
+codacy-coverage
+django-nose
+nose-html-reporting
+nose-exclude
+coverage
+gunicorn
+psycopg2
+django-queryinspect
