@@ -14,6 +14,7 @@ router.register(r'waiters', WaiterViewSet, base_name='waiters')
 urlpatterns = [
     url(r'^api/', include(router.urls)),
     url(r'^epi/menu', include('menu.urls')),
+    url(r'^api/createuserprofiles/', create_user, name="create_user_profile"),
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]

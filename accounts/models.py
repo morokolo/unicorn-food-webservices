@@ -23,7 +23,7 @@ class UserProfile(models.Model):
     )
     user = models.ForeignKey(User, related_name='user_profile')
     user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES, blank=True, null=True)
-    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
+    image = models.ImageField(upload_to='Media', height_field=None, width_field=None, max_length=100)
     cellphone = models.CharField(max_length=15, blank=True, null=True)
 
     def __str__(self):
