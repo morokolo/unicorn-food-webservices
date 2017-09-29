@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import *
-from menu.serializers import MenuItemSerializer
+from menu.serializers import MenuSerializer
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -19,11 +19,11 @@ class UserProfileSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
     class Meta:
         model = UserProfile
-        fields = ('id', 'user', 'user_type', 'image', 'cellphone')
+        fields = ('id', 'user', 'user_type', 'cellphone')
 
 
 class RestaurantSerializer(serializers.ModelSerializer):
-    menu = MenuItemSerializer(read_only=True)
+    menu = MenuSerializer(read_only=True)
     class Meta:
         model = Restaurant
         fields = ('id', 'name', 'address', 'latlong', 'menu')

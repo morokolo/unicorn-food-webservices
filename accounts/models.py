@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django.contrib.auth.models import User
 from django.db import models
-from menu.models import *
+from menu.models import Menu
 
 
 # Create your models here.
@@ -26,7 +26,7 @@ class UserProfile(models.Model):
     )
     user = models.ForeignKey(User, related_name='user_profile')
     user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES, blank=True, null=True)
-    image = models.ImageField(upload_to='Media', height_field=None, width_field=None, max_length=100)
+    #image = models.ImageField(upload_to='Media', height_field=None, width_field=None, max_length=100)
     cellphone = models.CharField(max_length=15, blank=True, null=True)
 
     def __str__(self):
