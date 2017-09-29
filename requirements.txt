@@ -1,7 +1,5 @@
 django==1.9
 Pillow
-workdays
-python-dateutil
 djangorestframework==3.3.3
 django-rest-swagger
 django-cors-headers
